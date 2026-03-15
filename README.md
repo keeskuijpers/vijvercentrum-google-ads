@@ -13,7 +13,7 @@
 Dit is een **complete 360° Google Ads strategie- en implementatie repository** voor Vijvercentrum.nl — een Nederlandse online webwinkel voor vijverproducten en koivoer. De repo bevat:
 
 - **Campagnestructuur & configuratie** — 4 gekalibreerde Search campagnes
-- **Persona-driven targeting** — twee kernpersona's (Henk & Marieke)
+- **Persona-driven targeting** — drie kernpersona's (Henk, Marieke & Restgroep)
 - **Tracking architecture** — GA4 ↔ Google Ads linkage, conversie-labels, UTM setup
 - **System audit** — alle integraties (Shopify, Klaviyo, GMC, GSC, Clarity)
 - **AI Agent instructies** — complete playbook voor automatisering via MCP tools
@@ -40,19 +40,31 @@ Dit is een **complete 360° Google Ads strategie- en implementatie repository** 
 ## Wat zit er in deze repo?
 
 ```
-/tmp/vijvercentrum-google-ads/
-├── README.md                          ← Dit bestand
+vijvercentrum-google-ads/
+├── README.md                              ← Dit bestand
 ├── .gitignore
+├── ads-editor-csv/                        ← 8 CSV import bestanden + Excel workbook
+│   ├── 01-a2koi-migratie-campagne.csv
+│   ├── 02-brand-search-campagne.csv
+│   ├── 03-non-brand-producten-campagne.csv
+│   ├── 04-seizoen-marieke-campagne.csv
+│   ├── 05-sitelink-extensies.csv
+│   ├── 06-callout-extensies.csv
+│   ├── 07-structured-snippets.csv
+│   ├── 08-negatieve-zoekwoorden.csv
+│   └── Vijvercentrum_Google_Ads_GOAT_Account_v1.0.xlsx
 └── docs/
-    ├── AGENT-INSTRUCTIES.md           ← Complete AI agent playbook
-    ├── SYSTEEM-AUDIT.md               ← Alle integraties & findings
-    ├── CONVERSIE-TRACKING.md          ← Conversion label architecture
-    ├── CAMPAGNE-DETAILS.md            ← Full campaign specs
-    ├── BUDGET-EN-KPI.md               ← Budget formule & KPI's
-    ├── LANCERING-CHECKLIST.md         ← Phased rollout checklist
+    ├── origineel-plan/
+    │   └── MARKETING-STRATEGIE.md         ← Origineel plan: persona's, targeting, rationale
+    ├── AGENT-INSTRUCTIES.md               ← Complete AI agent playbook
+    ├── SYSTEEM-AUDIT.md                   ← Alle integraties & findings
+    ├── CONVERSIE-TRACKING.md              ← Conversion label architecture
+    ├── CAMPAGNE-DETAILS.md                ← Full campaign specs
+    ├── BUDGET-EN-KPI.md                   ← Budget formule & KPI's
+    ├── LANCERING-CHECKLIST.md             ← Phased rollout checklist
     └── tools/
-        ├── RETAILZ-MCP-TOOLS.md       ← MCP tool reference
-        └── GOOGLE-ADS-EDITOR.md       ← CSV import handleiding
+        ├── RETAILZ-MCP-TOOLS.md           ← MCP tool reference
+        └── GOOGLE-ADS-EDITOR.md           ← CSV import handleiding
 ```
 
 ### CSV Import Bestanden (in AGENT-INSTRUCTIES.md)
@@ -88,25 +100,41 @@ Dit is een **complete 360° Google Ads strategie- en implementatie repository** 
 
 ## Persona's
 
-### 👨 Henk — De Technische Vijverman (55+)
+> Volledig uitgewerkt in `docs/origineel-plan/MARKETING-STRATEGIE.md`
 
-- **Profiel:** Ervaren vijvereigenaar, kent alle merken en producten
-- **Search gedrag:** Specifieke zoekopdrachten (merk + producttype)
-- **Intent:** Exact wat hij zoekt, weinig afdwaling
+### 👨 Henk — "Noodklant" (52 jaar, 30-40% orders)
+
+- **Profiel:** Ervaren vijvereigenaar (8+ jaar), kent alle merken en producten
+- **Trigger:** Acute situatie — pomp kapot, koi ziek, lek, algenexplosie
+- **Search gedrag:** Specifieke zoekopdrachten (merk + producttype + SKU)
+- **Intent:** Weet precies wat hij zoekt, sessieduur <3 min
 - **Campagnes:** A2KOI Migratie, Brand Search, Non-Brand Producten
 - **Keywords:** High intent, long-tail, product-centric
-- **Device:** Desktop/laptop primair
-- **Jaarlijks budget vijver:** €800–2000
+- **Device:** 60% mobiel (vanuit de tuin), 40% desktop
+- **Gevoeligheid:** Levertijd > prijs
 
-### 👩 Marieke — De Nieuwe Vijvereigenaar (35–50)
+### 👩 Marieke — "Seizoensklant" (44 jaar, 40-50% orders)
 
-- **Profiel:** Relatief nieuw met vijver, zoekt advies en ondersteuning
-- **Search gedrag:** Seizoensgebonden, breed spectrum
+- **Profiel:** Relatief nieuw met vijver (2 jaar), zoekt advies en ondersteuning
+- **Trigger:** Seizoenswisseling — vijver opstarten (maart), winterklaar (oktober)
+- **Search gedrag:** Seizoensgebonden, breed spectrum, meerdere sessies
 - **Intent:** Wil leren, zoekt solutions voor problemen
 - **Campagnes:** Seizoen Marieke, Brand Search
 - **Keywords:** Informational + transactional, product guidance
-- **Device:** Mobile + desktop balanced
-- **Jaarlijks budget vijver:** €300–800
+- **Device:** 70% desktop (avond thuis), 30% mobiel
+- **Gevoeligheid:** Vertrouwen > prijs
+
+### 🏢 Restgroep — B2B & overig (10-20% orders)
+
+- **Segment:** Hoveniers, vijverbouwers, koihandelaren, cadeaukopers, aquariumhouders
+- **Campagnes:** Worden meegenomen in Brand Search en Non-Brand
+- **Toekomst:** Eigen B2B-campagne als volume dat rechtvaardigt
+
+### Marktgebied
+
+- **Landen:** Nederland + België
+- **Taal:** Nederlands
+- **Merchant Center feed:** Alleen NL + BE (geen andere landen)
 
 ---
 
