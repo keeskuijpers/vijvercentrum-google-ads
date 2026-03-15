@@ -1,0 +1,72 @@
+# OS Files
+.DS_Store
+.DS_Store?
+*.AppleDouble
+*.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+dist/
+build/
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets.json
+credentials.json
+api_keys.txt
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+
+# Google Ads Editor (local exports)
+*.ads
+Ads_Editor_*.zip
+
+# Data Exports
+export/
+~*.xlsx
+
+# Node (if using)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Lock Files (team should commit these)
+# package-lock.json
+# yarn.lock
+
+# Build Artifacts
+*.o
+*.a
+*.so
+dist/
+build/
+
+# macOS Specific
+.AppleDouble
+.LSOverride
+*.localized
